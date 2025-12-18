@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "C:\\Users\\ruzaki\\source\\repos\\Api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\repositories\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\repositories\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\repositories\\rentalpropertyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\repositories\\rentalpropertyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\repositories\\interfaces\\ibooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\repositories\\interfaces\\ibooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\repositories\\interfaces\\irentalproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\repositories\\interfaces\\irentalproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\repositories\\interfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\repositories\\interfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\repositories\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\repositories\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\data\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|c:\\users\\ruzaki\\source\\repos\\api\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4164B824-F8AF-4D04-A30B-75F4AD6C6862}|Api\\Api.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
@@ -33,12 +61,107 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 16,
-          "SelectedChildIndex": 5,
+          "DockedHeight": 234,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\BookingRepository.cs",
+              "RelativeDocumentMoniker": "Api\\Repositories\\BookingRepository.cs",
+              "ToolTip": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\BookingRepository.cs",
+              "RelativeToolTip": "Api\\Repositories\\BookingRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:15:19.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RentalPropertyRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\RentalPropertyRepository.cs",
+              "RelativeDocumentMoniker": "Api\\Repositories\\RentalPropertyRepository.cs",
+              "ToolTip": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\RentalPropertyRepository.cs",
+              "RelativeToolTip": "Api\\Repositories\\RentalPropertyRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:14:59.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Api\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Api\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAUwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:14:39.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IBooking.cs",
+              "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\Interfaces\\IBooking.cs",
+              "RelativeDocumentMoniker": "Api\\Repositories\\Interfaces\\IBooking.cs",
+              "ToolTip": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\Interfaces\\IBooking.cs",
+              "RelativeToolTip": "Api\\Repositories\\Interfaces\\IBooking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:09:34.691Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "IRentalProperty.cs",
+              "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\Interfaces\\IRentalProperty.cs",
+              "RelativeDocumentMoniker": "Api\\Repositories\\Interfaces\\IRentalProperty.cs",
+              "ToolTip": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\Interfaces\\IRentalProperty.cs",
+              "RelativeToolTip": "Api\\Repositories\\Interfaces\\IRentalProperty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:09:09.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IUser.cs",
+              "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\Interfaces\\IUser.cs",
+              "RelativeDocumentMoniker": "Api\\Repositories\\Interfaces\\IUser.cs",
+              "ToolTip": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\Interfaces\\IUser.cs",
+              "RelativeToolTip": "Api\\Repositories\\Interfaces\\IUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:08:36.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "Api\\Repositories\\Interfaces\\IRepository.cs",
+              "ToolTip": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Repositories\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "Api\\Repositories\\Interfaces\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:08:06.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\appsettings.json",
               "RelativeDocumentMoniker": "Api\\appsettings.json",
@@ -50,19 +173,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Program.cs",
               "RelativeDocumentMoniker": "Api\\Program.cs",
               "ToolTip": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Program.cs",
               "RelativeToolTip": "Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T06:26:59.611Z"
+              "WhenOpened": "2025-12-18T06:26:59.611Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "DbContext.cs",
               "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Data\\DbContext.cs",
               "RelativeDocumentMoniker": "Api\\Data\\DbContext.cs",
@@ -74,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "RentalProperty.cs",
               "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Models\\RentalProperty.cs",
               "RelativeDocumentMoniker": "Api\\Models\\RentalProperty.cs",
@@ -86,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Booking.cs",
               "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Models\\Booking.cs",
               "RelativeDocumentMoniker": "Api\\Models\\Booking.cs",
@@ -98,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\ruzaki\\source\\repos\\Api\\Api\\Models\\User.cs",
               "RelativeDocumentMoniker": "Api\\Models\\User.cs",
@@ -112,7 +236,7 @@
           ]
         },
         {
-          "DockedHeight": 179,
+          "DockedHeight": 16,
           "SelectedChildIndex": -1,
           "Children": [
             {

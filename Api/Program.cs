@@ -1,6 +1,7 @@
-
-using Api.Data;
 using Microsoft.EntityFrameworkCore;
+using Api.Data;
+using Api.Repositories.Interfaces;
+using Api.Repositories;
 
 namespace Api
 {
@@ -10,13 +11,17 @@ namespace Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+           
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IRentalPropertyRepository, RentalPropertyRepository>();
+            builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
             // Add services to the container.
-
             builder.Services.AddControllers();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -31,8 +36,6 @@ namespace Api
             }
 
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();
