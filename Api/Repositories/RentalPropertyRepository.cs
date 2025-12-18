@@ -15,14 +15,28 @@ namespace Api.Repositories
             _context = context;
         }
 
+
         public async Task<RentalProperty?> GetByIdAsync(int id)
-            => await _context.RentalProperties.FindAsync(id);
+        {
+            return await _context.RentalProperties
+                .Include(rp => rp.Owner)
+                .FirstOrDefaultAsync(rp => rp.Id == id);
+        }
 
         public async Task<IEnumerable<RentalProperty>> GetAllAsync()
-            => await _context.RentalProperties.ToListAsync();
+        {
+            return await _context.RentalProperties
+                .Include(rp => rp.Owner)
+                .ToListAsync();
+        }
 
         public async Task<IEnumerable<RentalProperty>> FindAsync(Expression<Func<RentalProperty, bool>> predicate)
-            => await _context.RentalProperties.Where(predicate).ToListAsync();
+        {
+            return await _context.RentalProperties
+                .Where(predicate)
+                .Include(rp => rp.Owner)
+                .ToListAsync();
+        }
 
         public async Task<RentalProperty> AddAsync(RentalProperty entity)
         {
@@ -44,12 +58,53 @@ namespace Api.Repositories
         }
 
         public async Task<bool> ExistsAsync(int id)
-            => await _context.RentalProperties.AnyAsync(rp => rp.Id == id);
+        {
+            return await _context.RentalProperties.AnyAsync(rp => rp.Id == id);
+        }
 
-        // Реализация уникального метода из IRentalPropertyRepository
-        public async Task<IEnumerable<RentalProperty>> GetPropertiesByOwnerAsync(int ownerId)
-            => await _context.RentalProperties
-                .Where(rp => rp.OwnerId == ownerId)
+
+        public async Task<IEnumerable<RentalProperty>> GetAvailablePropertiesAsync(DateTime startDate, DateTime endDate)
+        {
+            var bookedPropertyIds = await _context.Bookings
+                .Where(b => b.Status == "Confirmed" &&
+                           ((b.StartDate <= endDate && b.EndDate >= startDate)))
+                .Select(b => b.PropertyId)
+                .Distinct()
                 .ToListAsync();
+
+            return await _context.RentalProperties
+                .Where(rp => !bookedPropertyIds.Contains(rp.Id))
+                .Include(rp => rp.Owner)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<RentalProperty>> GetPropertiesByOwnerAsync(int ownerId)
+        {
+            return await _context.RentalProperties
+                .Where(rp => rp.OwnerId == ownerId)
+                .Include(rp => rp.Owner)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<RentalProperty>> GetPropertiesByPriceRangeAsync(decimal minPrice, decimal maxPrice)
+        {
+            return await _context.RentalProperties
+                .Where(rp => rp.PricePerDay >= minPrice && rp.PricePerDay <= maxPrice)
+                .Include(rp => rp.Owner)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<RentalProperty>> SearchPropertiesAsync(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                return await GetAllAsync();
+
+            return await _context.RentalProperties
+                .Where(rp => rp.Title.Contains(searchTerm) ||
+                            rp.Description.Contains(searchTerm) ||
+                            rp.Address.Contains(searchTerm))
+                .Include(rp => rp.Owner)
+                .ToListAsync();
+        }
     }
 }

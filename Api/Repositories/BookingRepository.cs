@@ -15,17 +15,41 @@ namespace Api.Repositories
             _context = context;
         }
 
+//crud методы базовые
         public async Task<Booking?> GetByIdAsync(int id)
-            => await _context.Bookings.FindAsync(id);
+        {
+            return await _context.Bookings
+                .Include(b => b.Property)
+                .Include(b => b.Tenant)
+                .FirstOrDefaultAsync(b => b.Id == id);
+        }
 
         public async Task<IEnumerable<Booking>> GetAllAsync()
-            => await _context.Bookings.ToListAsync();
+        {
+            return await _context.Bookings
+                .Include(b => b.Property)
+                .Include(b => b.Tenant)
+                .ToListAsync();
+        }
 
         public async Task<IEnumerable<Booking>> FindAsync(Expression<Func<Booking, bool>> predicate)
-            => await _context.Bookings.Where(predicate).ToListAsync();
+        {
+            return await _context.Bookings
+                .Where(predicate)
+                .Include(b => b.Property)
+                .Include(b => b.Tenant)
+                .ToListAsync();
+        }
 
         public async Task<Booking> AddAsync(Booking entity)
         {
+            var property = await _context.RentalProperties.FindAsync(entity.PropertyId);
+            if (property != null)
+            {
+                var days = (entity.EndDate - entity.StartDate).Days;
+                entity.TotalPrice = property.PricePerDay * days;
+            }
+
             await _context.Bookings.AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity;
@@ -44,12 +68,53 @@ namespace Api.Repositories
         }
 
         public async Task<bool> ExistsAsync(int id)
-            => await _context.Bookings.AnyAsync(b => b.Id == id);
+        {
+            return await _context.Bookings.AnyAsync(b => b.Id == id);
+        }
 
-        // Реализация уникального метода из IBookingRepository
+
         public async Task<IEnumerable<Booking>> GetBookingsByUserAsync(int userId)
-            => await _context.Bookings
+        {
+            return await _context.Bookings
                 .Where(b => b.TenantId == userId)
+                .Include(b => b.Property)
+                .Include(b => b.Tenant)
                 .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Booking>> GetBookingsByPropertyAsync(int propertyId)
+        {
+            return await _context.Bookings
+                .Where(b => b.PropertyId == propertyId)
+                .Include(b => b.Property)
+                .Include(b => b.Tenant)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Booking>> GetActiveBookingsAsync()
+        {
+            return await _context.Bookings
+                .Where(b => b.Status == "Confirmed" && b.EndDate >= DateTime.Now)
+                .Include(b => b.Property)
+                .Include(b => b.Tenant)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Booking>> GetBookingsByDateRangeAsync(DateTime startDate, DateTime endDate)
+        {
+            return await _context.Bookings
+                .Where(b => b.StartDate <= endDate && b.EndDate >= startDate)
+                .Include(b => b.Property)
+                .Include(b => b.Tenant)
+                .ToListAsync();
+        }
+
+        public async Task<bool> IsPropertyAvailableAsync(int propertyId, DateTime startDate, DateTime endDate)
+        {
+            return !await _context.Bookings
+                .AnyAsync(b => b.PropertyId == propertyId &&
+                              b.Status == "Confirmed" &&
+                              ((b.StartDate <= endDate && b.EndDate >= startDate)));
+        }
     }
 }

@@ -14,14 +14,23 @@ namespace Api.Repositories
         {
             _context = context;
         }
+
+        
+
         public async Task<User?> GetByIdAsync(int id)
-            => await _context.Users.FindAsync(id);
+        {
+            return await _context.Users.FindAsync(id);
+        }
 
         public async Task<IEnumerable<User>> GetAllAsync()
-            => await _context.Users.ToListAsync();
+        {
+            return await _context.Users.ToListAsync();
+        }
 
         public async Task<IEnumerable<User>> FindAsync(Expression<Func<User, bool>> predicate)
-            => await _context.Users.Where(predicate).ToListAsync();
+        {
+            return await _context.Users.Where(predicate).ToListAsync();
+        }
 
         public async Task<User> AddAsync(User entity)
         {
@@ -43,9 +52,42 @@ namespace Api.Repositories
         }
 
         public async Task<bool> ExistsAsync(int id)
-            => await _context.Users.AnyAsync(u => u.Id == id);
+        {
+            return await _context.Users.AnyAsync(u => u.Id == id);
+        }
+
 
         public async Task<User?> GetByEmailAsync(string email)
-            => await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+        public async Task<User?> GetByPhoneAsync(string phone)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Phone == phone);
+        }
+
+        public async Task<IEnumerable<User>> GetUsersWithPropertiesAsync()
+        {
+            return await _context.Users
+                .Include(u => u.Properties)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<User>> GetLandlordsAsync()
+        {
+            return await _context.Users
+                .Where(u => u.Properties.Any())
+                .Include(u => u.Properties)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<User>> GetTenantsAsync()
+        {
+            return await _context.Users
+                .Where(u => u.Bookings.Any())
+                .Include(u => u.Bookings)
+                .ToListAsync();
+        }
     }
 }
