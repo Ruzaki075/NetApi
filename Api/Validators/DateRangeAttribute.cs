@@ -48,12 +48,21 @@ namespace Api.Validators
 
             if (startDateValue is DateTime startDate && endDateValue is DateTime endDate)
             {
-                if (endDate <= startDate)
+                // Нормализуем даты к UTC и сравниваем только даты без времени
+                var startDateUtc = startDate.Kind == DateTimeKind.Utc 
+                    ? startDate.Date 
+                    : startDate.ToUniversalTime().Date;
+                var endDateUtc = endDate.Kind == DateTimeKind.Utc 
+                    ? endDate.Date 
+                    : endDate.ToUniversalTime().Date;
+                var todayUtc = DateTime.UtcNow.Date;
+
+                if (endDateUtc <= startDateUtc)
                 {
                     return new ValidationResult("Дата окончания должна быть позже даты начала.");
                 }
-
-                if (startDate < DateTime.Today)
+                
+                if (startDateUtc < todayUtc)
                 {
                     return new ValidationResult("Дата начала не может быть в прошлом.");
                 }

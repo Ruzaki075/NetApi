@@ -13,9 +13,11 @@ namespace Api.DTOs
         [Range(1, int.MaxValue, ErrorMessage = "ID объекта аренды должен быть больше 0")]
         public int PropertyId { get; set; }
 
-        [Required(ErrorMessage = "ID арендатора обязателен")]
+        /// <summary>
+        /// ID арендатора. Если не указан, можно передать через query параметр tenantId
+        /// </summary>
         [Range(1, int.MaxValue, ErrorMessage = "ID арендатора должен быть больше 0")]
-        public int TenantId { get; set; }
+        public int? TenantId { get; set; }
 
         [Required(ErrorMessage = "Дата начала обязательна")]
         public DateTime StartDate { get; set; }

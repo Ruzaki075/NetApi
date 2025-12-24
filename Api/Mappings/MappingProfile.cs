@@ -39,7 +39,9 @@ namespace Api.Mappings
                 .ForMember(dest => dest.TenantName, opt =>
                     opt.MapFrom(src => src.Tenant.Name));
 
-            CreateMap<CreateBookingDto, Booking>();
+            CreateMap<CreateBookingDto, Booking>()
+                .ForMember(dest => dest.TenantId, opt => 
+                    opt.MapFrom(src => src.TenantId ?? 0)); // Временное значение, будет перезаписано в сервисе
 
             CreateMap<UpdateBookingDto, Booking>()
                 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) =>

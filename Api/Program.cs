@@ -29,6 +29,11 @@ builder.Services.AddControllers()
         // Настройка JSON сериализации: camelCase для имен свойств
         options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
         options.JsonSerializerOptions.WriteIndented = true;
+    })
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        // Отключаем автоматическую обработку ошибок валидации, чтобы контроллеры сами обрабатывали их
+        options.SuppressModelStateInvalidFilter = true;
     });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
