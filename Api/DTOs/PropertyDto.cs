@@ -20,6 +20,7 @@ namespace Api.DTOs
         public decimal PricePerDay { get; set; }
 
         [Required(ErrorMessage = "ID владельца обязателен")]
+        [Range(1, int.MaxValue, ErrorMessage = "ID владельца должен быть больше 0")]
         public int OwnerId { get; set; }
     }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using Api.Data;
 using Api.Repositories.Interfaces;
 using Api.Repositories;
@@ -22,9 +23,23 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IPropertyService, PropertyService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // Настройка JSON сериализации: camelCase для имен свойств
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Система аренды жилья API",
+        Version = "v1",
+        Description = "API для управления системой аренды жилья"
+    });
+});
 
 var app = builder.Build();
 

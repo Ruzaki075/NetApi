@@ -64,7 +64,16 @@ namespace Api.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                var errors = ModelState
+                    .Where(x => x.Value?.Errors.Count > 0)
+                    .SelectMany(x => x.Value!.Errors.Select(e => e.ErrorMessage))
+                    .ToList();
+                
+                return BadRequest(new 
+                { 
+                    message = "Ошибка валидации данных",
+                    errors = errors
+                });
             }
 
             var createdProperty = await _propertyService.CreatePropertyAsync(createPropertyDto);

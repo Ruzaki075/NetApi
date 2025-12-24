@@ -1,16 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Api.Validators;
 
 namespace Api.DTOs
 {
     /// <summary>
     /// DTO для создания бронирования
     /// </summary>
+    [DateRange(nameof(StartDate), nameof(EndDate))]
     public class CreateBookingDto
     {
         [Required(ErrorMessage = "ID объекта аренды обязателен")]
+        [Range(1, int.MaxValue, ErrorMessage = "ID объекта аренды должен быть больше 0")]
         public int PropertyId { get; set; }
 
         [Required(ErrorMessage = "ID арендатора обязателен")]
+        [Range(1, int.MaxValue, ErrorMessage = "ID арендатора должен быть больше 0")]
         public int TenantId { get; set; }
 
         [Required(ErrorMessage = "Дата начала обязательна")]

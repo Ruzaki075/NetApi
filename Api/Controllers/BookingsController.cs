@@ -58,13 +58,24 @@ namespace Api.Controllers
         /// <param name="createBookingDto">Данные для создания бронирования</param>
         /// <returns>Созданное бронирование</returns>
         [HttpPost]
+        [Consumes("application/json")]
+        [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(BookingResponseDto))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<BookingResponseDto>> CreateBooking([FromBody] CreateBookingDto createBookingDto)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                var errors = ModelState
+                    .Where(x => x.Value?.Errors.Count > 0)
+                    .SelectMany(x => x.Value!.Errors.Select(e => e.ErrorMessage))
+                    .ToList();
+                
+                return BadRequest(new 
+                { 
+                    message = "Ошибка валидации данных",
+                    errors = errors
+                });
             }
 
             var createdBooking = await _bookingService.CreateBookingAsync(createBookingDto);
