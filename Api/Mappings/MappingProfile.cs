@@ -37,11 +37,7 @@ namespace Api.Mappings
                 .ForMember(dest => dest.PropertyTitle, opt =>
                     opt.MapFrom(src => src.Property.Title))
                 .ForMember(dest => dest.TenantName, opt =>
-                    opt.MapFrom(src => src.Tenant.Name))
-                .ForMember(dest => dest.TotalPrice, opt =>
-                    opt.MapFrom(src =>
-                        src.Property.PricePerDay *
-                        (decimal)(src.EndDate - src.StartDate).TotalDays));
+                    opt.MapFrom(src => src.Tenant.Name));
 
             CreateMap<CreateBookingDto, Booking>();
 

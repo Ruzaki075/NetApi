@@ -5,6 +5,7 @@ using Api.Repositories;
 using Api.Services.Interfaces;  
 using Api.Services;           
 using Api.Mappings;
+using Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Регистрация middleware обработки исключений (должен быть первым в конвейере)
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
