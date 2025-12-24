@@ -71,7 +71,9 @@ namespace Api.Repositories
             var property = await _context.RentalProperties.FindAsync(entity.PropertyId);
             if (property != null)
             {
-                var days = (entity.EndDate - entity.StartDate).Days;
+                // Расчет количества дней аренды: день заезда считается, день выезда - нет
+                // Например: заезд 1 января, выезд 3 января = 2 дня аренды
+                var days = (entity.EndDate.Date - entity.StartDate.Date).Days;
                 entity.TotalPrice = property.PricePerDay * days;
             }
 

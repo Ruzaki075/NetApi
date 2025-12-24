@@ -86,6 +86,12 @@ namespace Api.Services
                 throw new ArgumentException($"Пользователь с ID {createBookingDto.TenantId} не найден");
             }
 
+            // Проверка: арендатор не может забронировать свою собственную недвижимость
+            if (property.OwnerId == createBookingDto.TenantId)
+            {
+                throw new InvalidOperationException("Нельзя забронировать свою собственную недвижимость");
+            }
+
             // Проверка доступности объекта на указанный период
             var isAvailable = await _bookingRepository.IsPropertyAvailableAsync(
                 createBookingDto.PropertyId,
